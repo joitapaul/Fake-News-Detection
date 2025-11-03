@@ -1,0 +1,28 @@
+# Git ignore file for security
+# This prevents sensitive files from being pushed to GitHub
+
+# Environment variables (contains API keys)
+.env
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Streamlit cache
+.streamlit/
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
