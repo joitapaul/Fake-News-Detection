@@ -272,14 +272,16 @@ class BeautifulUI:
         div[data-testid="stToolbar"] {visibility: hidden;}
         .stActionButton {display:none;}
         
-        /* MAIN BACKGROUND - Warm paper texture feel
-           Soft cream background like quality paper
+        /* MAIN BACKGROUND - Deep to light blue gradient
+           Light reflection effect from deep to light
         */
         [data-testid="stAppViewContainer"] {
             background: linear-gradient(180deg, 
-                #f7f3e9 0%,      /* Warm cream */
-                #faf8f3 50%,     /* Light paper white */
-                #f5f1e8 100%     /* Soft beige */
+                #1e3a8a 0%,      /* Deep blue */
+                #3b82f6 25%,     /* Medium blue */
+                #60a5fa 50%,     /* Light medium blue */
+                #93c5fd 75%,     /* Sky blue */
+                #dbeafe 100%     /* Very light blue */
             );
             background-attachment: fixed;
         }
@@ -335,22 +337,22 @@ class BeautifulUI:
             font-weight: 600 !important;
         }
         
-        /* SIDEBAR - Warm wooden panel feel
-           Natural, inviting, trustworthy
+        /* SIDEBAR - Light blue background
+           Clean, readable, professional
         */
         [data-testid="stSidebar"] {
             background: linear-gradient(180deg, 
-                #e8dcc5 0%,      /* Light wood */
-                #f5ead6 100%     /* Cream wood */
+                #bfdbfe 0%,      /* Light blue */
+                #dbeafe 100%     /* Very light blue */
             ) !important;
-            border-right: 3px solid #d4a574 !important;
+            border-right: 3px solid #3b82f6 !important;
             box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1) !important;
         }
         
         [data-testid="stSidebar"] h1,
         [data-testid="stSidebar"] h2,
         [data-testid="stSidebar"] h3 {
-            color: #5d4037 !important;
+            color: #1e3a8a !important;
         }
         
         [data-testid="stSidebar"] p,
@@ -358,7 +360,7 @@ class BeautifulUI:
         [data-testid="stSidebar"] label,
         [data-testid="stSidebar"] span,
         [data-testid="stSidebar"] li {
-            color: #4a4a4a !important;
+            color: #1e40af !important;
         }
         
         /* BUTTONS - Soft, inviting buttons
@@ -435,6 +437,17 @@ class BeautifulUI:
             box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1) !important;
             pointer-events: auto !important;
             cursor: text !important;
+            user-select: text !important;
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            caret-color: #2c3e50 !important;
+            animation: none !important;
+        }
+        
+        .stTextArea > div > div > textarea:hover {
+            border-color: #7b93a7 !important;
+            cursor: text !important;
         }
         
         .stTextInput > div > div > input:focus,
@@ -442,6 +455,26 @@ class BeautifulUI:
             border-color: #7b93a7 !important;
             box-shadow: 0 0 0 3px rgba(123, 147, 167, 0.1) !important;
             outline: none !important;
+            cursor: text !important;
+            caret-color: #2c3e50 !important;
+        }
+        
+        /* Blinking cursor animation for text inputs */
+        @keyframes blink-cursor {
+            0%, 49% { 
+                caret-color: #2c3e50;
+            }
+            50%, 100% { 
+                caret-color: transparent;
+            }
+        }
+        
+        .stTextArea > div > div > textarea:focus {
+            animation: blink-cursor 1s step-end infinite !important;
+        }
+        
+        .stTextInput > div > div > input:focus {
+            animation: blink-cursor 1s step-end infinite !important;
         }
         
         .stTextInput > div > div > input::placeholder,
@@ -497,14 +530,18 @@ class BeautifulUI:
         
         /* DOWNLOAD BUTTON */
         .stDownloadButton > button {
-            background: #d4a574 !important;
-            border-color: #c89563 !important;
-            box-shadow: 0 2px 8px rgba(212, 165, 116, 0.3) !important;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+            border-color: #1e40af !important;
+            color: #ffffff !important;
+            font-weight: 600 !important;
+            font-size: 1rem !important;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3) !important;
         }
         
         .stDownloadButton > button:hover {
-            background: #c89563 !important;
-            box-shadow: 0 4px 12px rgba(212, 165, 116, 0.4) !important;
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%) !important;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5) !important;
+            transform: translateY(-1px) !important;
         }
         
         /* SPINNER - Natural loading */
@@ -580,11 +617,11 @@ class BeautifulUI:
         """Render beautiful header section"""
         st.markdown("""
         <div style='text-align: center; padding: 1.5rem 0;'>
-            <h1 style='color: #2c3e50; font-size: 2rem; margin-bottom: 0.5rem; font-family: Lora, Georgia, serif; font-weight: 700;'>
+            <h1 style='color: #2c3e50; font-size: 4rem; margin-bottom: 1rem; font-family: Lora, Georgia, serif; font-weight: 800;'>
                 🕵️‍♂️ Fake News Detector
             </h1>
-            <p style='color: #5d4037; font-size: 0.9rem; margin-top: 0.5rem; font-family: Open Sans, sans-serif; font-weight: 500;'>
-                AI-Powered Truth Checkup • Made by Debasmita X Manisha X Joita
+            <p style='color: #5d4037; font-size: 1.0rem; margin-top: 0.5rem; font-family: Open Sans, sans-serif; font-weight: 600;'>
+                AI-Powered Truth Checkup • Made by <strong style='font-weight: 800;'>Debasmita</strong> X <strong style='font-weight: 800;'>Manisha</strong> X <strong style='font-weight: 800;'>Joita</strong>
             </p>
             <hr style='width: 70%; margin: 1.5rem auto; border: none; height: 1px; background: linear-gradient(90deg, transparent, rgba(212, 197, 169, 0.8), transparent);'>
         </div>
@@ -596,9 +633,25 @@ class BeautifulUI:
         with st.sidebar:
             st.markdown("""
             <div style='text-align: center; padding: 1rem 0;'>
-                <h2 style='color: #5d4037;'>ℹ️ INFO PANEL</h2>
+                <h2 style='color: #1e3a8a;'>ℹ️ INFO PANEL</h2>
             </div>
             """, unsafe_allow_html=True)
+            
+            # Initialize session state for panel visibility
+            if 'info_panel_visible' not in st.session_state:
+                st.session_state.info_panel_visible = True
+            
+            # Toggle button
+            button_text = "🔼 Hide Info" if st.session_state.info_panel_visible else "🔽 Show Info"
+            if st.button(button_text, use_container_width=True, key="toggle_info_panel"):
+                st.session_state.info_panel_visible = not st.session_state.info_panel_visible
+                st.rerun()
+            
+            st.markdown("---")
+            
+            # Only show content if panel is visible
+            if not st.session_state.info_panel_visible:
+                return
             
             st.markdown("### 🛠️ How It Works")
             st.markdown("""
@@ -684,42 +737,189 @@ class BeautifulUI:
             news_text = st.text_area(
                 "Enter the news claim:",
                 height=150,
-                placeholder="Example: PM Modi announced new education policy today...",
-                help="Paste the news text you want to verify"
+                placeholder="Click here and start typing... Example: PM Modi announced new education policy today...",
+                help="Click in the text box to start typing or paste the news text you want to verify",
+                key="news_text_input"
             )
         else:
             url = st.text_input(
                 "Enter news article URL:",
-                placeholder="https://example.com/news-article"
+                placeholder="https://example.com/news-article",
+                help="Enter a valid news article URL to extract and verify the content",
+                key="news_url_input"
             )
-            if url:
-                # Extract text from URL
-                try:
-                    import requests
-                    from bs4 import BeautifulSoup
-                    
-                    with st.spinner("� Extracting text from URL..."):
-                        response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
-                        soup = BeautifulSoup(response.content, 'html.parser')
+            if url and url.strip():
+                # Validate URL format
+                if not url.startswith(('http://', 'https://')):
+                    st.warning("⚠️ Please enter a valid URL starting with http:// or https://")
+                else:
+                    # Extract text from URL
+                    try:
+                        import requests
+                        from bs4 import BeautifulSoup
+                        from urllib.parse import urlparse, unquote
+                        import re
                         
-                        # Remove script and style elements
-                        for script in soup(["script", "style"]):
-                            script.decompose()
-                        
-                        # Extract text from paragraphs
-                        paragraphs = soup.find_all('p')
-                        extracted_text = ' '.join([p.get_text().strip() for p in paragraphs if p.get_text().strip()])
-                        
-                        if extracted_text:
-                            news_text = extracted_text[:1000]  # Limit to 1000 characters
-                            st.success("✅ Text extracted successfully!")
-                            st.text_area("Extracted text:", value=news_text, height=100, disabled=True)
-                        else:
-                            st.error("❌ Could not extract text from this URL")
-                            news_text = ""
-                except Exception as e:
-                    st.error(f"❌ Error extracting URL: {str(e)}")
-                    news_text = ""
+                        with st.spinner("🌐 Extracting text from URL..."):
+                            # Set realistic browser headers
+                            headers = {
+                                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+                                'Accept-Language': 'en-US,en;q=0.9',
+                                'Accept-Encoding': 'gzip, deflate, br',
+                                'Connection': 'keep-alive',
+                                'Upgrade-Insecure-Requests': '1',
+                                'Sec-Fetch-Dest': 'document',
+                                'Sec-Fetch-Mode': 'navigate',
+                                'Sec-Fetch-Site': 'none',
+                                'Cache-Control': 'max-age=0',
+                            }
+                            
+                            # Check if it's a Google News link
+                            if 'news.google.com' in url:
+                                st.info("🔄 Detected Google News link. Extracting original article...")
+                                try:
+                                    # Try to extract the actual URL from Google News redirect
+                                    session = requests.Session()
+                                    session.max_redirects = 10
+                                    response = session.get(url, headers=headers, timeout=20, allow_redirects=True)
+                                    final_url = response.url
+                                    
+                                    # Check if we got redirected to a proper article
+                                    if 'news.google.com' not in final_url:
+                                        st.success(f"✅ Found article at: {urlparse(final_url).netloc}")
+                                    else:
+                                        st.warning("⚠️ Could not extract article from Google News. Try opening the article directly and copying its URL.")
+                                        news_text = ""
+                                        raise Exception("Google News redirect failed")
+                                except Exception as e:
+                                    st.error("❌ Google News links often can't be extracted directly. Please:")
+                                    st.info("1. Click the Google News link to open the article\n2. Copy the URL from the article page\n3. Paste that URL here instead")
+                                    news_text = ""
+                                    raise
+                            else:
+                                # Regular URL - make request
+                                response = requests.get(url, headers=headers, timeout=15, allow_redirects=True)
+                            
+                            response.raise_for_status()
+                            
+                            # Parse HTML with better encoding handling
+                            response.encoding = response.apparent_encoding
+                            soup = BeautifulSoup(response.text, 'html.parser')
+                            
+                            # Get page title for context
+                            page_title = soup.find('title')
+                            title_text = page_title.get_text().strip() if page_title else ""
+                            
+                            # Remove unwanted elements more aggressively
+                            for element in soup(['script', 'style', 'nav', 'header', 'footer', 'aside', 'iframe', 
+                                               'noscript', 'button', 'form', 'img', 'svg', 'video', 'audio']):
+                                element.decompose()
+                            
+                            # Try multiple extraction methods
+                            extracted_text = ""
+                            extraction_method = ""
+                            
+                            # Method 1: Look for specific news article structures
+                            article_selectors = [
+                                soup.find('article'),
+                                soup.find('div', class_=re.compile(r'article[-_]?body|article[-_]?content|story[-_]?body|post[-_]?content', re.I)),
+                                soup.find('div', id=re.compile(r'article|story|content|post', re.I)),
+                                soup.find('main')
+                            ]
+                            
+                            for selector in article_selectors:
+                                if selector and not extracted_text:
+                                    paragraphs = selector.find_all(['p', 'h2', 'h3'])
+                                    text_parts = [p.get_text().strip() for p in paragraphs if p.get_text().strip() and len(p.get_text().strip()) > 30]
+                                    if text_parts:
+                                        extracted_text = ' '.join(text_parts)
+                                        extraction_method = "article structure"
+                                        break
+                            
+                            # Method 2: Find the longest paragraph-rich container
+                            if not extracted_text:
+                                divs = soup.find_all('div')
+                                best_div = None
+                                max_para_count = 0
+                                
+                                for div in divs:
+                                    paras = div.find_all('p', recursive=False)
+                                    if len(paras) > max_para_count:
+                                        max_para_count = len(paras)
+                                        best_div = div
+                                
+                                if best_div and max_para_count >= 3:
+                                    paragraphs = best_div.find_all('p')
+                                    text_parts = [p.get_text().strip() for p in paragraphs if len(p.get_text().strip()) > 30]
+                                    extracted_text = ' '.join(text_parts)
+                                    extraction_method = "paragraph container"
+                            
+                            # Method 3: Get all meaningful paragraphs (relaxed filtering)
+                            if not extracted_text:
+                                paragraphs = soup.find_all('p')
+                                text_parts = [p.get_text().strip() for p in paragraphs 
+                                            if len(p.get_text().strip()) > 30]
+                                # Take first 50 paragraphs to avoid getting too much junk
+                                if text_parts:
+                                    extracted_text = ' '.join(text_parts[:50])
+                                    extraction_method = "all paragraphs"
+                            
+                            # Method 4: Last resort - get ALL text content
+                            if not extracted_text:
+                                # Get all text from body, split by sentences
+                                body = soup.find('body')
+                                if body:
+                                    all_text = body.get_text(separator=' ', strip=True)
+                                    # Clean up
+                                    all_text = re.sub(r'\s+', ' ', all_text).strip()
+                                    # Split into sentences and filter
+                                    sentences = re.split(r'[.!?]+', all_text)
+                                    meaningful_sentences = [s.strip() for s in sentences if len(s.strip()) > 50]
+                                    if meaningful_sentences:
+                                        extracted_text = '. '.join(meaningful_sentences[:30])  # Take first 30 sentences
+                                        extraction_method = "full body text"
+                            
+                            # Clean the extracted text
+                            if extracted_text:
+                                # Remove extra whitespace
+                                extracted_text = re.sub(r'\s+', ' ', extracted_text).strip()
+                                
+                                # Validate length (more lenient)
+                                if len(extracted_text) > 80:
+                                    news_text = extracted_text[:2500]  # Increased limit
+                                    st.success(f"✅ Text extracted successfully! ({len(extracted_text)} characters)")
+                                    if title_text:
+                                        st.info(f"📰 Article: {title_text[:100]}...")
+                                    if extraction_method:
+                                        st.caption(f"📍 Extraction method: {extraction_method}")
+                                    st.text_area("Extracted text preview:", 
+                                               value=news_text[:600] + "..." if len(news_text) > 600 else news_text, 
+                                               height=150, disabled=True)
+                                else:
+                                    st.error("❌ Extracted text is too short. The article might be behind a paywall or require login.")
+                                    st.info("💡 Try: Copy the article text manually and use 'Type/Paste Text' option")
+                                    news_text = ""
+                            else:
+                                st.error("❌ Could not extract meaningful text from this URL.")
+                                st.info("💡 Possible reasons:\n- Article behind paywall\n- JavaScript-heavy website\n- Login required\n\n→ Copy the text manually and paste it instead.")
+                                # Debug info
+                                st.expander("🔍 Debug Info").write(f"Page title: {title_text}\nResponse status: {response.status_code}\nContent length: {len(response.text)} chars")
+                                news_text = ""
+                                
+                    except requests.exceptions.Timeout:
+                        st.error("❌ Request timeout. The website took too long to respond. Please try again.")
+                        news_text = ""
+                    except requests.exceptions.ConnectionError:
+                        st.error("❌ Connection error. Please check your internet connection and try again.")
+                        news_text = ""
+                    except requests.exceptions.HTTPError as e:
+                        st.error(f"❌ HTTP Error: {e.response.status_code}. The URL may be invalid or blocked.")
+                        news_text = ""
+                    except Exception as e:
+                        st.error(f"❌ Error extracting URL: {str(e)[:100]}")
+                        st.info("💡 Tip: Try copying the news text manually and using 'Type/Paste Text' option instead.")
+                        news_text = ""
         st.markdown("---")
         
         # Action buttons (full width)
@@ -794,16 +994,12 @@ class BeautifulUI:
         st.markdown(f"""
         <div style='background: rgba(255, 255, 255, 0.9); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; border: 2px solid #e0d5c1;'>
             <h3 style='color: #5d4037; margin: 0 0 1rem 0; font-size: 1.1rem;'>🎯 AI Confidence Score</h3>
-            <div style='display: flex; align-items: center; gap: 1.5rem;'>
-                <div style='flex: 0 0 120px;'>
-                    <div style='font-size: 3rem; font-weight: 700; color: {conf_color};'>{confidence}%</div>
-                    <div style='font-size: 0.9rem; color: #6d6d6d; font-weight: 500;'>{conf_label}</div>
-                </div>
-                <div style='flex: 1;'>
-                    <div style='background: #e0e0e0; height: 25px; border-radius: 12px; overflow: hidden;'>
-                        <div style='background: {conf_color}; height: 100%; width: {confidence}%; transition: width 0.5s;'></div>
-                    </div>
-                </div>
+            <div style='text-align: center; margin-bottom: 1rem;'>
+                <div style='font-size: 3rem; font-weight: 700; color: {conf_color};'>{confidence}%</div>
+                <div style='font-size: 0.9rem; color: #6d6d6d; font-weight: 500;'>{conf_label}</div>
+            </div>
+            <div style='background: #e0e0e0; height: 25px; border-radius: 12px; overflow: hidden;'>
+                <div style='background: {conf_color}; height: 100%; width: {confidence}%; transition: width 0.5s;'></div>
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -863,9 +1059,9 @@ class BeautifulUI:
     def render_download_section(result_data):
         """Render download report section"""
         st.markdown("""
-        <div style='background: rgba(255, 255, 255, 0.9); border-radius: 12px; padding: 1.5rem; border: 2px solid #e0d5c1;'>
-            <h3 style='color: #5d4037; margin: 0 0 0.5rem 0; font-size: 1.1rem;'>📥 Download Report</h3>
-            <p style='color: #6d6d6d; font-size: 0.85rem; margin-bottom: 1rem;'>Save the verification report for your records</p>
+        <div style='background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 12px; padding: 1.5rem; border: 2px solid #3b82f6; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);'>
+            <h3 style='color: #1e40af; margin: 0 0 0.5rem 0; font-size: 1.2rem; font-weight: 700;'>📥 Download Report</h3>
+            <p style='color: #1e3a8a; font-size: 0.95rem; margin-bottom: 1rem; font-weight: 500;'>Save the verification report for your records</p>
         </div>
         """, unsafe_allow_html=True)
         
