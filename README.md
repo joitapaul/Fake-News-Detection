@@ -1,10 +1,11 @@
-# 🕵️‍♂️ Fake News Verifier  
-**AI-Powered Indian News Fact Checker**  
+# 🕵️‍♂️ Fake News Verifier
+
+**AI-Powered Indian News Fact Checker**
 _Fighting misinformation with intelligence, empathy, and style._
 
 ![Banner](https://img.shields.io/badge/AI%20Fake%20News%20Verifier-%F0%9F%94%8D-green?style=for-the-badge)
-![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-FF4B4B?style=for-the-badge&logo=streamlit)
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.28%2B-FF4B4B?style=for-the-badge&logo=streamlit)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
 ---
@@ -63,36 +64,52 @@ It intelligently evaluates news articles, gives **verification confidence**, and
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the Repository
-git clone https://github.com/yourusername/Fake-News-Verifier.git
-cd Fake-News-Verifier
+```bash
+git clone https://github.com/DebasmitaBose0/Fake-News-Detection.git
+cd "Fake News final" || cd Fake-News-Detection || cd Fake-News-Verifier
+```
 
 ### 2️⃣ Install Dependencies
 pip install -r requirements.txt
 
 ### 3️⃣ Add Your API Key
-Create a .env file in the root directory and add:
+Create a `.env` file in the project root (the repository already contains a `.gitignore` that excludes `.env`) and add your API key:
+```text
 GEMINI_API_KEY=your_api_key_here
+```
 
 ### 4️⃣ Run the App
+There are two easy ways to run the app locally.
+
+Option A — use the included launcher (recommended):
+```bash
 python run_bg.py
+```
+
+Option B — run Streamlit directly:
+```bash
+python -m streamlit run main_beautiful.py
+```
 
 Then open your browser and navigate to:
-👉 http://localhost:8501
+👉 http://localhost:8501 (or the URL shown in the terminal)
 
 ---
 
 ## 🧪 Testing the AI Engine
 Before launching the UI, test your Gemini API connection:
-python test_ai.py
 
-If everything’s configured correctly, you’ll see:
-✅ AI Test Successful!
+```bash
+python test_ai.py
+```
+
+If everything is configured correctly you should see a short confirmation and a sample response from the Generative API.
 
 ---
 
 ## 📰 Trusted Sources
 The AI cross-checks claims with reliable Indian news outlets:
-🟢 Anadabazar Patrika
+🟢 Anandabazar Patrika
 🟢 The Telegraph
 🟢 The Statesman
 🟢 Times of India
@@ -130,7 +147,10 @@ DETAILED_ANALYSIS: No credible sources reported this claim...
 ---
 
 👩‍💻 Contributors
-Debasmita Bose - Lead Developer & Designer 🎨,Manisha Debnath - Co-Developer & Research Analyst 📊,Joita Paul - Data & Testing Specialist 🧪
+
+- Debasmita Bose — Lead Developer & Designer 🎨
+- Manisha Debnath — Co-Developer & Research Analyst 📊
+- Joita Paul — Data & Testing Specialist 🧪
 
 ---
 
@@ -143,7 +163,8 @@ Debasmita Bose - Lead Developer & Designer 🎨,Manisha Debnath - Co-Developer &
 ---
 
 ## ⚖️ License
-This project is licensed under the MIT License – free to use, modify, and share with proper attribution.
+This project is licensed under the MIT License (see `LICENSE`).
+Debasmita Bose © 2025
 
 ---
 
