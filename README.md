@@ -1,4 +1,4 @@
-# 🕵️‍♂️ Fake News Verifier
+# 🕵️‍♂️ Fake News 
 
 **AI-Powered Indian News Fact Checker**
 _Fighting misinformation with intelligence, empathy, and style._
