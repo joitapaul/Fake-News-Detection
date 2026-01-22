@@ -14,7 +14,7 @@ _Fighting misinformation with intelligence, empathy, and style._
 
 > “Truth needs no army — just the courage to verify it.”
 
-**Fake News Verifier** is an AI-driven web application built using **Streamlit** and **Google Gemini AI**, designed to detect and analyze the fake or misleading news in the **Indian context**.  
+**Fake News Verifier** is an AI-driven web application built using **Streamlit** and **Google Gemini AI**, designed to detect and analyze  fake or misleading news in the **Indian context**.  
 It intelligently evaluates news articles, gives **verification confidence**, and recommends **trusted Indian sources** for cross-checking.
 
 ---
